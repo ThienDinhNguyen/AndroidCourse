@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SecondAssignment</string>
+    <string name="username">User Name</string>
+    <string name="value">Value</string>
+    <string name="welcome">Welcome</string>
+    <string name="your_username">Your Username</string>
+    <string name="submit">Submit</string>
+    <string name="your_name">Your Name</string>
+
+    <string name="name">Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_date_of_birth">Your Date of Birth</string>
+    <string name="appdate">Thien Nguyen, Jun 6th 2021</string>
+    <string name="pick_birthdate">Pick your birth date</string>
+    <string name="back">Back</string>
+</resources>
