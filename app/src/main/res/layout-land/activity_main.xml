@@ -82,16 +82,16 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress" />
 
+
     <TextView
         android:id="@+id/your_birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="201dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="21dp"
         android:text="@string/your_date_of_birth" />
-
 
     <TextView
         android:id="@+id/textView5"
@@ -108,8 +108,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/your_birthday"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="121dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
         android:gravity="center" />
@@ -121,7 +123,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="0dp"
         android:gravity="center"
 

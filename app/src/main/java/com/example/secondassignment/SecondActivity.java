@@ -20,20 +20,25 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        //Hooks
         tv=findViewById(R.id.textView);
+        button = findViewById(R.id.backButton);
+
         st=getIntent().getExtras().getString("Value");
         tv.setText("Welcome "+st);
 
-        button = findViewById(R.id.backButton);
         button.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
+                finish();
+
             }
         });
+
+
+
+
     }
 
 
