@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startActivity(getIntent());
+
 
         //Hooks
         bton = findViewById(R.id.firstButton);
@@ -38,17 +40,31 @@ public class MainActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.agePicker);
         valText = findViewById(R.id.textView5);
 
+        int curYear, curMonth, curDay;
+        curYear = c.getInstance().get(c.YEAR);
+        curMonth = c.getInstance().get(c.MONTH);
+        curDay = c.getInstance().get(c.DATE);
 
         //Button to go to 2nd activity
         bton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if (validateAge() && validate()) {
                     valText.setText("Welcome");
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     st = mEditUsername.getText().toString();
                     intent.putExtra("Value", st);
                     startActivity(intent);
+
+                    mEditUsername.setText("");
+                    mEditName.setText("");
+                    mEditEmail.setText("");
+                    datePicker.init(curYear,curMonth,curDay,null);
+                    valText.setText("");
+
+
                 } else {
                     valText.setText("Error");
                     bton.setEnabled(false);
@@ -61,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
             mEditEmail.setText(savedInstanceState.getString("Email"));
             mEditName.setText(savedInstanceState.getString("Name"));
             mEditUsername.setText(savedInstanceState.getString("Username"));
-            day = Integer.parseInt(savedInstanceState.getString("Day"));
-            month = Integer.parseInt(savedInstanceState.getString("Month"));
-            year = Integer.parseInt(savedInstanceState.getString("Year"));
+
+            day = savedInstanceState.getInt("Day");
+            month = savedInstanceState.getInt("Month");
+            year = savedInstanceState.getInt("Year");
             datePicker.init(year, month, day, null);
         }
 
@@ -77,14 +94,16 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("Email", mEditEmail.getText().toString());
         outState.putString("Username", mEditUsername.getText().toString());
 
-        String day = String.valueOf(datePicker.getDayOfMonth());
-        String month = String.valueOf(datePicker.getMonth());
-        String year = String.valueOf(datePicker.getYear());
+        int day = datePicker.getDayOfMonth();
+        int month = datePicker.getMonth();
+        int year = datePicker.getYear();
 
-        outState.putString("Year", year);
-        outState.putString("Month", month);
-        outState.putString("Date", day);
+        outState.putInt("Year", year);
+        outState.putInt("Month", month+1);
+        outState.putInt("Date", day);
     }
+
+
 
 
     @SuppressLint("SetTextI18n")
