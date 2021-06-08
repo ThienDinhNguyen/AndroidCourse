@@ -2,7 +2,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.11458333333333333" />
+        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/activity_post.xml" value="0.264" />
+        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/adoptions.xml" value="0.11458333333333333" />
+        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/adotion_card.xml" value="0.2" />
+        <entry key="..\:/ANDROID/FinalProject/app/src/main/res/layout/signup.xml" value="0.11458333333333333" />
         <entry key="..\:/Users/dinht/AndroidStudioProjects/MySecondApplication/app/src/main/res/layout-land/fragment_first.xml" value="0.264" />
         <entry key="..\:/Users/dinht/AndroidStudioProjects/MySecondApplication/app/src/main/res/layout/activity_main.xml" value="0.19743589743589743" />
         <entry key="..\:/Users/dinht/AndroidStudioProjects/MySecondApplication/app/src/main/res/layout/content_main.xml" value="0.240625" />
