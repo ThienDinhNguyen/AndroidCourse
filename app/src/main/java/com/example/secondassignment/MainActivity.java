@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (validateAge() && validate()) {
+                if (validateAge() && validate() && validateEmail()) {
                     valText.setText("Welcome");
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     st = mEditUsername.getText().toString();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     mEditUsername.setText("");
                     mEditName.setText("");
                     mEditEmail.setText("");
-                    datePicker.init(curYear,curMonth,curDay,null);
+                    datePicker.init(curYear, curMonth, curDay, null);
                     valText.setText("");
 
 
@@ -99,11 +99,9 @@ public class MainActivity extends AppCompatActivity {
         int year = datePicker.getYear();
 
         outState.putInt("Year", year);
-        outState.putInt("Month", month+1);
+        outState.putInt("Month", month + 1);
         outState.putInt("Date", day);
     }
-
-
 
 
     @SuppressLint("SetTextI18n")
@@ -123,13 +121,20 @@ public class MainActivity extends AppCompatActivity {
     public boolean validate() {
         String userName = mEditUsername.getText().toString();
         String name = mEditName.getText().toString();
-        String email = mEditEmail.getText().toString();
-        if (userName.length() > 0 && name.length() > 0 && email.length() > 0) {
+        if (userName.length() > 0 && name.length() > 0 ) {
             return true;
         } else {
             return false;
         }
 
+    }
+
+    public boolean validateEmail() {
+        String email = mEditEmail.getText().toString();
+        if (android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return true;
+        }
+        return false;
     }
 
 }
